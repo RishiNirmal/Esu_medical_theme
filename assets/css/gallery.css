@@ -1,0 +1,204 @@
+/* Common style */
+.gallery figure {
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.3s;
+	background:#000000;
+	border-radius: 0px;
+	margin-bottom: 30px;
+}
+
+.gallery figure img {
+	position: relative;
+	display: block;
+	width: 100%;
+	opacity: 0.7;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.gallery figcaption {
+	position: absolute;
+	top: 0;
+	z-index: 11;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.gallery figcaption h2 {
+	margin: 0 0 20px 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 24px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.gallery figcaption p {
+	padding: 0 20px;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.gallery figcaption h2,
+.gallery figcaption p {
+	-webkit-transform: translateY(50px);
+	transform: translateY(50px);
+}
+
+.gallery figure button {
+	position: absolute;
+	padding: 4px 20px;
+	border: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.gallery figcaption,
+.gallery figcaption h2,
+.gallery figcaption p,
+.gallery figure button {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+/* Hover effects */
+.gallery a:hover figure img {
+	opacity: 1;
+}
+
+.gallery a:hover figcaption h2,
+.gallery a:hover figcaption p {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.gallery a:hover figcaption p {
+	opacity: 0;
+}
+
+/* Individual styles */
+.gallery figure button,
+.gallery figure button {
+	top: 50%;
+	left: 50%;
+	border: 2px solid #fff;
+	background: transparent;
+	color: #fff;
+	opacity: 0;
+	-webkit-transform: translateY(-50%) translateX(-50%) scale(0.25);
+	transform: translateY(-50%) translateX(-50%) scale(0.25);
+}
+
+.gallery a:hover figure button,
+.gallery a:hover figure button {
+	opacity: 1;
+	-webkit-transform: translateY(-50%) translateX(-50%) scale(1);
+	transform: translateY(-50%) translateX(-50%) scale(1);
+}
+.gallery figcaption p {
+	color: #ffffff;
+}
+
+.gallery figcaption p {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+.gallery figure button {
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+	width: 100%;
+	background: #1f2749e0;
+	color: #fff;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	outline: 0;
+}
+.gallery a:hover figure button {
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+.gallery figcaption h2, 
+.gallery figcaption p,
+.gallery figcaption h2,
+.gallery figcaption p {
+	-webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.115, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.115, 1.445);
+	timing-function: cubic-bezier(0.250, 0.250, 0.115, 1.445);
+}
+.gallery a:hover figcaption p,
+.gallery a:hover figcaption p {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+}
+.gallery figcaption h2 {
+	color:#fff;
+}
+
+.gallery a:hover figcaption h2 {
+	-webkit-transform: translateY(5px);
+	transform: translateY(5px);
+}
+
+/* Media Queries */
+/* Let's redefine the width of each anchor and the margins */
+
+@media screen and (max-width: 58em) {
+
+
+	.gallery a:nth-child(odd) {
+		margin: 0;
+	}
+
+	.gallery a:nth-child(3n-1) {
+		margin: 30px 0 -30px 0;
+	}
+}
+
+@media screen and (max-width: 45em) {
+
+
+	.gallery a:nth-child(3n-1) {
+		margin: 0;
+	}
+
+	.gallery a:nth-child(even) {
+		margin: 30px 0 -30px 0;
+	}
+
+
+	.gallery figcaption h2 {
+		margin-bottom: 0px;
+		-webkit-transform: translateY(30px);
+		transform: translateY(30px);
+	}
+
+	.gallery figcaption p {
+		margin: 0;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (max-width: 27em) {
+	.gallery a {
+		width: 100%;
+	}
+
+	.gallery a:nth-child(even) {
+		margin: 0;
+	}
+}
